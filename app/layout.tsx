@@ -1,33 +1,25 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import type { Metadata } from 'next'
+import { syne, poppins } from './fonts'
+import './globals.css'
 
 export const metadata: Metadata = {
-  title: "Calibur Labs",
+  title: 'Calibur Labs — Software That Drives Results',
   description: "Let's discuss your project and create software that drives real business results.",
-};
+  openGraph: {
+    title: 'Calibur Labs',
+    description: "Let's discuss your project and create software that drives real business results.",
+    images: [{ url: '/images/og-image.png', width: 1200, height: 630 }],
+  },
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${syne.variable} ${poppins.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
-  );
+  )
 }
