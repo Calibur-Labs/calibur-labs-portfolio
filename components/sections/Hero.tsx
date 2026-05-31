@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { fadeUp, stagger } from '@/lib/motion'
+import { fadeUp } from '@/lib/motion'
 import GlowBadge from '@/components/ui/GlowBadge'
 import GradientText from '@/components/ui/GradientText'
 import BladeLight from '@/components/ui/BladeLight'
@@ -12,6 +12,11 @@ const stats = [
   { value: '10+', label: 'UG Engineers' },
   { value: '100%', label: 'Client Satisfaction' },
 ]
+
+const heroStagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.13, delayChildren: 0.38 } },
+}
 
 export default function Hero() {
   return (
@@ -24,12 +29,87 @@ export default function Hero() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '120px 24px 120px',
+        padding: '120px 24px',
         textAlign: 'center',
+        overflow: 'hidden',
       }}
     >
-      <div style={{ maxWidth: '800px', width: '100%' }}>
-        <motion.div variants={stagger} initial="hidden" animate="visible">
+      {/* Persistent ambient glow — stays after spotlight exits */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '-8%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '1100px',
+          height: '520px',
+          background:
+            'radial-gradient(ellipse at 50% 0%, rgba(155,195,255,0.042) 0%, rgba(130,175,255,0.015) 45%, transparent 70%)',
+          pointerEvents: 'none',
+          zIndex: 1,
+        }}
+      />
+
+      {/* Primary spotlight beam */}
+      <motion.div
+        initial={{ y: -620, opacity: 0 }}
+        animate={{
+          y: [-620, -40, 960],
+          opacity: [0, 0.9, 0],
+        }}
+        transition={{
+          duration: 2.6,
+          times: [0, 0.26, 1],
+          ease: [0.22, 1, 0.36, 1],
+          delay: 0.05,
+        }}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: '50%',
+          marginLeft: '-540px',
+          width: '1080px',
+          height: '600px',
+          background:
+            'radial-gradient(ellipse 580px 300px at 50% 0%, rgba(215,232,255,0.17) 0%, rgba(185,212,255,0.08) 32%, rgba(155,195,255,0.025) 58%, transparent 76%)',
+          pointerEvents: 'none',
+          zIndex: 2,
+          mixBlendMode: 'screen',
+        }}
+      />
+
+      {/* Secondary soft diffusion halo */}
+      <motion.div
+        initial={{ y: -500, opacity: 0 }}
+        animate={{
+          y: [-500, 80, 1100],
+          opacity: [0, 0.38, 0],
+        }}
+        transition={{
+          duration: 2.9,
+          times: [0, 0.28, 1],
+          ease: [0.22, 1, 0.4, 1],
+          delay: 0.18,
+        }}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: '50%',
+          marginLeft: '-620px',
+          width: '1240px',
+          height: '700px',
+          background:
+            'radial-gradient(ellipse 700px 380px at 50% 5%, rgba(180,210,255,0.07) 0%, rgba(150,190,255,0.02) 50%, transparent 75%)',
+          pointerEvents: 'none',
+          zIndex: 2,
+          mixBlendMode: 'screen',
+          filter: 'blur(8px)',
+        }}
+      />
+
+      {/* Content */}
+      <div style={{ maxWidth: '800px', width: '100%', position: 'relative', zIndex: 3 }}>
+        <motion.div variants={heroStagger} initial="hidden" animate="visible">
 
           <motion.div variants={fadeUp} style={{ marginTop: '16px', marginBottom: '28px', display: 'flex', justifyContent: 'center' }}>
             <GlowBadge>Sri Lankan Startup · Est. 2026</GlowBadge>
@@ -83,6 +163,7 @@ export default function Hero() {
                 textDecoration: 'none',
                 transition: 'opacity 0.2s',
               }}
+              className="btn-shimmer"
             >
               View Our Work
             </a>
