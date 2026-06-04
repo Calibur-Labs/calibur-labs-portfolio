@@ -57,10 +57,7 @@ export default function Footer() {
           {/* Col 1 — Brand */}
           <div>
             <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', marginBottom: '16px' }}>
-              <Image src="/images/logo.svg" alt="Calibur Labs" width={28} height={28} />
-              <span style={{ fontFamily: 'var(--font-syne), system-ui, sans-serif', fontWeight: 800, fontSize: '16px', color: '#e2e8f0' }}>
-                Calibur Labs
-              </span>
+              <Image src="/images/logo.png" alt="Calibur Labs" width={140} height={70} />
             </Link>
             <p style={{ color: '#636972', fontSize: '14px', lineHeight: 1.7, fontFamily: 'var(--font-poppins), system-ui, sans-serif', maxWidth: '220px' }}>
               Software that drives real business results.

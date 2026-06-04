@@ -49,18 +49,12 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-          <Image src="/images/logo.svg" alt="Calibur Labs" width={32} height={32} />
-          <span
-            style={{
-              fontFamily: 'var(--font-syne), system-ui, sans-serif',
-              fontWeight: 800,
-              fontSize: '18px',
-              color: '#e2e8f0',
-              letterSpacing: '-0.01em',
-            }}
-          >
-            Calibur Labs
-          </span>
+         <Image
+          src="/images/logo.png"
+          alt="Calibur Labs"
+          width={140}
+          height={70}
+        />
         </Link>
 
         {/* Desktop Nav */}
