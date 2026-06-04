@@ -119,15 +119,21 @@ export default function Projects() {
                 }}
                 whileHover="hover"
               >
-                <div style={{ position: 'absolute', inset: 0, background: 'rgba(255,255,255,0.02)' }} />
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  style={{ objectFit: 'cover', transition: 'transform 0.4s ease' }}
-                />
+                {/* Image with subtle zoom on hover */}
+                <motion.div
+                  variants={{ hover: { scale: 1.05 } }}
+                  transition={{ duration: 0.4, ease: 'easeOut' }}
+                  style={{ position: 'absolute', inset: 0 }}
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
+                </motion.div>
 
-                {/* Hover Overlay */}
+                {/* Hover overlay */}
                 <motion.div
                   variants={{ hover: { opacity: 1 } }}
                   initial={{ opacity: 0 }}
@@ -138,25 +144,23 @@ export default function Projects() {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'flex-end',
-                    padding: '24px',
+                    padding: '20px',
                   }}
                 >
-                  <p style={{ fontSize: '12px', color: '#ffffff', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', margin: '0 0 6px', fontFamily: 'var(--font-poppins), system-ui, sans-serif' }}>
-                    {project.category}
-                  </p>
-                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#e2e8f0', margin: '0 0 12px', fontFamily: 'var(--font-syne), system-ui, sans-serif' }}>
+                  <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#e2e8f0', margin: '0 0 10px', fontFamily: 'var(--font-syne), system-ui, sans-serif' }}>
                     {project.title}
                   </h3>
-                  <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '16px' }}>
+                  <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: project.url ? '12px' : '0' }}>
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
                         style={{
                           padding: '3px 10px',
                           borderRadius: '99px',
-                          background: 'rgba(255,255,255,0.08)',
-                          color: '#8a9099',
-                          fontSize: '12px',
+                          background: 'rgba(255,255,255,0.10)',
+                          border: '1px solid rgba(255,255,255,0.14)',
+                          color: '#cbd5e1',
+                          fontSize: '11px',
                           fontFamily: 'var(--font-poppins), system-ui, sans-serif',
                         }}
                       >
@@ -167,15 +171,19 @@ export default function Projects() {
                   {project.url && (
                     <a
                       href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       style={{
                         color: '#ffffff',
                         fontSize: '13px',
                         fontWeight: 600,
                         textDecoration: 'none',
                         fontFamily: 'var(--font-poppins), system-ui, sans-serif',
+                        display: 'inline-block',
                       }}
+                      onClick={(e) => e.stopPropagation()}
                     >
-                      View Case Study →
+                      View Project →
                     </a>
                   )}
                 </motion.div>
