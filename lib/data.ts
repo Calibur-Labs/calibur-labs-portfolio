@@ -73,6 +73,7 @@ export const projects: Project[] = [
     category: 'Web',
     image: '/images/premoCard.jpeg',
     tags: ['Booking System', 'Availability Calendar', 'Responsive Design'],
+    url: 'https://premoheritage.com',
   },
   // {
   //   id: '2',
