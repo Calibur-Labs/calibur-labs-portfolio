@@ -41,9 +41,9 @@ function AuroraRibbon({
       }}
       animate={{
         y: ['-65vh', '110vh'],
-        scaleX: [1, 1.08, 0.93, 1.06, 0.97, 1],
-        skewX: [0, skewRange, -skewRange * 0.7, skewRange * 0.5, -skewRange * 0.3, 0],
-        x: [0, 8, -6, 10, -4, 0],
+        scaleX: [1, 1.28, 0.78, 1.22, 0.85, 1],
+        skewX: [0, skewRange, -skewRange * 0.75, skewRange * 0.6, -skewRange * 0.4, 0],
+        x: [0, 22, -16, 28, -12, 0],
       }}
       transition={{
         y: {
@@ -92,44 +92,44 @@ export default function AnimatedGrid() {
       <AuroraRibbon
         left="42%"
         width={200}
-        color="rgba(85, 165, 255, 0.11)"
+        color="rgba(85, 165, 255, 0.15)"
         duration={10}
         delay={0}
         blur={44}
-        skewRange={3.5}
+        skewRange={8}
       />
 
       {/* Secondary ribbon — cyan tint, slightly right */}
       <AuroraRibbon
         left="55%"
         width={150}
-        color="rgba(55, 205, 225, 0.075)"
+        color="rgba(55, 205, 225, 0.105)"
         duration={13}
         delay={4}
         blur={52}
-        skewRange={2.8}
+        skewRange={6.5}
       />
 
       {/* Tertiary ribbon — indigo-blue, slightly left */}
       <AuroraRibbon
         left="30%"
         width={130}
-        color="rgba(105, 135, 255, 0.065)"
+        color="rgba(105, 135, 255, 0.095)"
         duration={11}
         delay={7}
         blur={48}
-        skewRange={4}
+        skewRange={9}
       />
 
       {/* Wide diffuse ribbon — very faint, wide glow */}
       <AuroraRibbon
         left="25%"
         width={380}
-        color="rgba(70, 150, 230, 0.028)"
+        color="rgba(70, 150, 230, 0.045)"
         duration={16}
         delay={2}
         blur={80}
-        skewRange={1.5}
+        skewRange={4}
       />
     </div>
   )
