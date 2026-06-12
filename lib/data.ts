@@ -59,10 +59,10 @@ export const services: Service[] = [
     description: 'Embed intelligent features into your product — from LLM-powered workflows to custom ML model deployment.',
   },
   {
-    id: 'consulting',
-    icon: '◇',
-    title: 'IT Consulting',
-    description: 'Strategic technology guidance to help you make the right architectural and vendor decisions from day one.',
+    id: 'business-systems',
+    icon: '▦',
+    title: 'CMS, ERP & POS Solutions',
+    description: 'End-to-end business systems including CMS, ERP, and POS solutions that streamline content management, operations, inventory, sales, and financial workflows in one integrated ecosystem.',
   },
 ]
 
@@ -130,25 +130,26 @@ export const techStack: TechItem[] = [
 ]
 
 export const testimonials: Testimonial[] = [
-  {
-    quote: "Calibur Labs transformed our outdated platform into a modern, scalable product. The team's technical depth and communication throughout the project were exceptional.",
-    author: 'Alex Rivera',
-    title: 'CTO',
-    company: 'Nexus Digital',
-    avatar: '/images/avatars/client-1.jpg',
-  },
-  {
-    quote: "From design to deployment, the Calibur Labs team delivered beyond our expectations. Our app launch was the smoothest we've ever had.",
-    author: 'Sarah Chen',
+{
+    quote:
+      "Calibur Labs played a key role in shaping our brand identity and improving our digital presence. Their team conducted in-depth research into our business model and provided valuable design ideas tailored to our needs. We also gained strong technical insights throughout the process, along with a smooth and professional experience. Their pricing was very reasonable considering the value delivered, which made it an easy decision to continue working with them.",
+    author: 'Preminda Kalansooriya',
     title: 'Founder',
-    company: 'Bloom Health',
-    avatar: '/images/avatars/client-2.jpg',
+    company: 'Premo Heritage Villa',
+    avatar: '/images/premo.png',
   },
-  {
-    quote: "Working with Calibur Labs felt like having a world-class engineering team in-house. They understood our business goals and built accordingly.Working with Calibur Labs felt like having a world-class engineering team in-house. They understood our business goals and built accordingly.",
-    author: 'Marcus Williams',
-    title: 'Head of Product',
-    company: 'Forge Analytics',
-    avatar: '/images/avatars/client-3.jpg',
-  },
+  // {
+  //   quote: "From design to deployment, the Calibur Labs team delivered beyond our expectations. Our app launch was the smoothest we've ever had.",
+  //   author: 'Sarah Chen',
+  //   title: 'Founder',
+  //   company: 'Bloom Health',
+  //   avatar: '/images/avatars/client-2.jpg',
+  // },
+  // {
+  //   quote: "Working with Calibur Labs felt like having a world-class engineering team in-house. They understood our business goals and built accordingly.Working with Calibur Labs felt like having a world-class engineering team in-house. They understood our business goals and built accordingly.",
+  //   author: 'Marcus Williams',
+  //   title: 'Head of Product',
+  //   company: 'Forge Analytics',
+  //   avatar: '/images/avatars/client-3.jpg',
+  // },
 ]

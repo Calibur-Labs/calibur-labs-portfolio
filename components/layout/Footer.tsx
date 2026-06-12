@@ -99,7 +99,7 @@ export default function Footer() {
             <p style={{ color: '#e2e8f0', fontSize: '13px', fontWeight: 600, fontFamily: 'var(--font-poppins), system-ui, sans-serif', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '16px' }}>
               Connect
             </p>
-            <div style={{ display: 'flex', gap: '12px' }}>
+            {/* <div style={{ display: 'flex', gap: '12px' }}>
               {socialLinks.map((s) => (
                 <a
                   key={s.label}
@@ -136,7 +136,7 @@ export default function Footer() {
                   {s.icon}
                 </a>
               ))}
-            </div>
+            </div> */}
             <p style={{ color: '#636972', fontSize: '13px', fontFamily: 'var(--font-poppins), system-ui, sans-serif', marginTop: '20px' }}>
               caliburlabz@gmail.com
             </p>

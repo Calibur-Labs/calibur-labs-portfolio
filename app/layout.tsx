@@ -3,7 +3,7 @@ import { syne, poppins } from './fonts'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Calibur Labs — Software That Drives Results',
+  title: 'Calibur Labs',
   description: "Let's discuss your project and create software that drives real business results.",
   openGraph: {
     title: 'Calibur Labs',
